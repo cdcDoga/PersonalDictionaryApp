@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DictionaryApp.Views.LoginPage">
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="loginBackground">#ffffff</Color>
+            <Color x:Key="inputBackground">#f2f2f2</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid Padding="15" BackgroundColor="{StaticResource loginBackground}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <StackLayout Grid.Row="0" Grid.Column="0" BackgroundColor="{StaticResource loginBackground}">
+                    <Image Source="https://purepng.com/public/uploads/large/purepng.com-dictionary-icon-android-lollipopsymbolsiconsgooglegoogle-iconsandroid-lollipoplollipop-iconsandroid-50-721522597173cj5xd.png"
+                       VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+                </StackLayout>
+
+                <StackLayout Grid.Row="1" Grid.Column="0" Spacing="8" BackgroundColor="{StaticResource loginBackground}">
+
+                    <Entry x:Name="entry_email" Placeholder="E-Mail" 
+                       BackgroundColor="{StaticResource inputBackground}" />
+
+                    <Label x:Name="help_lbl_email" TextColor="{StaticResource BurgundyHeader}" 
+                           Text="" FontSize="Small" />
+
+                    <Entry x:Name="entry_password" Placeholder="Şifre" IsPassword="True"
+                        BackgroundColor="{StaticResource inputBackground}" />
+
+                    <Label x:Name="help_lbl_password" TextColor="{StaticResource BurgundyHeader}" 
+                           Text="" FontSize="Small" />
+
+                    <Button Text="Sign in or register" x:Name="btn_signInOrReg" Clicked="SignInOrRegFunction" Margin="10"
+                        BackgroundColor="Transparent" BorderColor="{StaticResource PrimaryBlue}" 
+                        TextColor="{StaticResource PrimaryBlue}" BorderRadius="20" BorderWidth="3" />
+
+                </StackLayout>
+
+            </Grid>
+
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

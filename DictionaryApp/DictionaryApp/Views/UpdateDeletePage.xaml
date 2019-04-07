@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DictionaryApp.Views.UpdateDeletePage">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="iOS" Value="0, 20, 0, 0" />
+        </OnPlatform>
+    </ContentPage.Padding>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Color x:Key="loginBackground">#ffffff</Color>
+            <Color x:Key="inputBackground">#f2f2f2</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+
+        <StackLayout Padding="20" Spacing="20">
+
+            <Label Text="Delete or Update Word Pair" FontSize="Medium" />
+            
+            <Grid Padding="0" BackgroundColor="{StaticResource loginBackground}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Entry Grid.Row="0" Grid.Column="0"
+                        x:Name="entry_tr" 
+                        BackgroundColor="Transparent" Placeholder="# Turkish #"
+                        HorizontalOptions="FillAndExpand" />
+
+                <Entry Grid.Row="0" Grid.Column="1"
+                        x:Name="entry_en" 
+                        BackgroundColor="Transparent" Placeholder="# English #"
+                        HorizontalOptions="FillAndExpand" />
+            </Grid>
+
+            <Grid Padding="0" BackgroundColor="{StaticResource loginBackground}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Row="0" Grid.Column="0"
+                        Text="DELETE" x:Name="btn_delete" Clicked="DeleteFunction"
+                        BackgroundColor="{StaticResource inputBackground}" BorderColor="Transparent" TextColor="{StaticResource BurgundyHeader}"
+                        HorizontalOptions="FillAndExpand" />
+
+                <Button Grid.Row="0" Grid.Column="1"
+                        Text="UPDATE" x:Name="btn_update" Clicked="UpdateFunction"
+                        BackgroundColor="{StaticResource inputBackground}" BorderColor="Transparent" TextColor="{StaticResource BurgundyHeader}"
+                        HorizontalOptions="FillAndExpand" />
+            </Grid>
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

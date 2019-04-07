@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DictionaryApp"
+             x:Class="DictionaryApp.MainPage"
+             Title="My Personal Dictionary">
+
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="iOS" Value="0, 20, 0, 0" />
+        </OnPlatform>
+    </ContentPage.Padding>
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            
+            <Color x:Key="loginBackground">#ffffff</Color>
+            <Color x:Key="inputBackground">#f2f2f2</Color>
+
+            <Style x:Key="btnTranslate" TargetType="ImageButton">
+                <Setter Property="BackgroundColor"  Value="Transparent" />
+                <Setter Property="Source"           Value="twotone_search_black_36.png" />
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <ScrollView>
+
+            <Grid Padding="15" BackgroundColor="{StaticResource loginBackground}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="5*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid Padding="0" Grid.Row="0" Grid.Column="0" BackgroundColor="{StaticResource loginBackground}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="7*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Entry Grid.Row="0" Grid.Column="0"
+                        x:Name="entry_translate" 
+                        BackgroundColor="Transparent" Placeholder="Enter some word.."
+                        VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" />
+
+                    <ImageButton Grid.Row="0" Grid.Column="1" 
+                        x:Name="btn_translate" Clicked="TranslateFunction"
+                        BackgroundColor="Transparent" BorderColor="Transparent"
+                        VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" 
+                        Style="{StaticResource btnTranslate}" />
+                </Grid>
+
+                <Label Grid.Row="1" Grid.Column="0" Text="Welcome to DictionaryApp!"
+                    VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" 
+                    x:Name="lbl_translate"/>
+
+                <Grid Padding="0" Grid.Row="2" Grid.Column="0" BackgroundColor="{StaticResource loginBackground}" 
+                      VerticalOptions="EndAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Button Grid.Row="0" Grid.Column="0"
+                        Text="EN>TR" x:Name="btn_lang" Clicked="LanguageReverseFunction"
+                        BackgroundColor="{StaticResource inputBackground}" BorderColor="Transparent" TextColor="{StaticResource BurgundyHeader}"
+                       VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" />
+
+                    <Button Grid.Row="0" Grid.Column="1"
+                        Text="CONFIGURE" x:Name="btn_config" 
+                        BackgroundColor="{StaticResource inputBackground}" BorderColor="Transparent" TextColor="{StaticResource BurgundyHeader}"
+                       VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" />
+                </Grid>
+
+            </Grid>
+
+        </ScrollView>
+    </ContentPage.Content>
+
+</ContentPage>
